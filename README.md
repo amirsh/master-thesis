@@ -1,4 +1,4 @@
 master-thesis
 =============
 
-My Master Thesis
+My Master Thesis Graphs
