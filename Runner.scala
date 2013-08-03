@@ -4,6 +4,8 @@ class Runner(val filename: String, val title: String, val columns: Int, val exte
     (extension match {
       case "pdf" => "pdf"
       case "png" => "png transparent"
+      case "eps" => "postscript eps"
+      case "svg" => "svg"
     }, s"graphs/eval_$filename.$extension")
   val inputfile = s"csv_files/$filename.csv"
   // val terminal = 
@@ -11,13 +13,13 @@ class Runner(val filename: String, val title: String, val columns: Int, val exte
     // "pngcairo transparent"
     // "png transparent"
   Gnuplot.run(s"""
-set terminal $terminal enhanced font "Times-Roman,12" fontscale 1.0 size 800, 600 
+set terminal $terminal enhanced font "Verdana,12" size 600, 400 
 set output '$outputfile'
 set key inside left top vertical noreverse noenhanced autotitles
 set datafile missing '-'
 set datafile separator ","
 set style data linespoints
-set xlabel "# of Iterations"
+set xlabel "Number of Iterations"
 set ylabel "Time (ms)"
 set xtics border in scale 1,0.5 nomirror offset character 0, 0, 0 autojustify
 set xtics  norangelimit font ",8"

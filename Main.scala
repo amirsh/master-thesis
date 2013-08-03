@@ -6,14 +6,14 @@ object Main {
         "Insertion.constantValue" -> "Inserting a Constant Value" -> 3,
         "Insertion.capturedValue" -> "Inserting Different Values" -> 3,
         "Update.constantWhereConstantUpdate" -> "Update Case I" -> 3,
-        "Update.constantWhereCapturedUpdate" -> "Update Case II" -> 3,
-        "Update.capturedWhereCapturedUpdate" -> "Update Case III" -> 3,
-        "Update.complex" -> "Update Case IV" -> 3
+        // "Update.constantWhereCapturedUpdate" -> "Update Case II" -> 3,
+        "Update.capturedWhereCapturedUpdate" -> "Update Case II" -> 3,
+        "Update.complex" -> "Update Case III" -> 3
       )
       case _ => List()
     }
     filenames foreach { case ((filename, title), columns) => 
-      new Runner(s"$filename", title, columns)
+      new Runner(s"$filename", title, columns, "png")
     }
   }
 }
